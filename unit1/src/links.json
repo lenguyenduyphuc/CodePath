@@ -1,0 +1,94 @@
+{
+  "iconic_games": [
+    {
+      "title": "Super Mario Bros.",
+      "developer": "Nintendo",
+      "release_year": 1985,
+      "platform": "Nintendo Entertainment System",
+      "significance": "Defined the platformer genre and helped revitalize the video game industry after the crash of 1983",
+      "download_link": "https://archive.org/details/smb_nes_2",
+      "image_url": "https://www.nintendo.com/eu/media/images/10_share_images/portals_3/2x1_SuperMarioHub_image1280w.jpg"
+    },
+    {
+      "title": "Tetris",
+      "developer": "Alexey Pajitnov",
+      "release_year": 1984,
+      "platform": "Multiple platforms",
+      "significance": "One of the most recognizable puzzle games ever created, with simple yet addictive gameplay",
+      "download_link": "https://tetris.com/play-tetris",
+      "image_url": "https://play-lh.googleusercontent.com/OWGN9-qhyQMwPdwUVciUaWwNB8-OLTdp4wtiC4imY_suZrIGV8Nb98OTZPCh7FjiaVG_sXA9gdY=w1296-h2160-rw"
+    },
+    {
+      "title": "Pac-Man",
+      "developer": "Namco",
+      "release_year": 1980,
+      "platform": "Arcade",
+      "significance": "Cultural phenomenon that transcended gaming and became a pop culture icon",
+      "download_link": "https://www.bandainamcoent.com/games/pac-man",
+      "image_url": "https://www.desura.games/files/images/19/1916287073371ef1ed76f05bf40ef4f7.jpg"
+    },
+    {
+      "title": "The Legend of Zelda: Ocarina of Time",
+      "developer": "Nintendo",
+      "release_year": 1998,
+      "platform": "Nintendo 64",
+      "significance": "Revolutionized 3D adventure games with its innovative targeting system and immersive world",
+      "download_link": "https://www.nintendo.com/store/products/the-legend-of-zelda-ocarina-of-time-3d-3ds/",
+      "image_url": "https://zelda.nintendo.com/assets/icons/share_icon.jpg"
+    },
+    {
+      "title": "Minecraft",
+      "developer": "Mojang Studios",
+      "release_year": 2011,
+      "platform": "Multiple platforms",
+      "significance": "Redefined creativity in gaming with its open-world sandbox gameplay",
+      "download_link": "https://www.minecraft.net/en-us/get-minecraft",
+      "image_url": "https://www.minecraft.net/content/dam/games/minecraft/key-art/MC_The-Wild-Update_540x300.jpg"
+    },
+    {
+      "title": "Doom",
+      "developer": "id Software",
+      "release_year": 1993,
+      "platform": "PC",
+      "significance": "Pioneered the first-person shooter genre and popularized multiplayer gaming",
+      "download_link": "https://store.steampowered.com/app/2280/DOOM_1993/",
+      "image_url": "https://image.api.playstation.com/vulcan/ap/rnd/202009/2814/GGyEnCkIXoyiVlN9sRHkzUPo.png"
+    },
+    {
+      "title": "World of Warcraft",
+      "developer": "Blizzard Entertainment",
+      "release_year": 2004,
+      "platform": "PC",
+      "significance": "Defined the MMORPG genre and created a virtual world with millions of players",
+      "download_link": "https://worldofwarcraft.blizzard.com/en-us/download",
+      "image_url": "https://www.dexerto.com/cdn-image/wp-content/uploads/2022/12/02/World-of-Warcraft-2022-feature-image-e1704636262315.jpg?width=1200&quality=60&format=auto"
+    },
+    {
+      "title": "Grand Theft Auto III",
+      "developer": "Rockstar Games",
+      "release_year": 2001,
+      "platform": "PlayStation 2",
+      "significance": "Revolutionized open-world game design with its 3D sandbox environment",
+      "download_link": "https://store.steampowered.com/app/12100/Grand_Theft_Auto_III/",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6WeQRbxR0Dc7Ry7p05NtvPbJZ21g-WbkCBg&s"
+    },
+    {
+      "title": "Space Invaders",
+      "developer": "Taito",
+      "release_year": 1978,
+      "platform": "Arcade",
+      "significance": "One of the earliest shooting games that helped establish the video game industry",
+      "download_link": "https://space-invaders.en.softonic.com/",
+      "image_url": "https://i.ytimg.com/vi/Jbn8IRmSq8M/maxresdefault.jpg"
+    },
+    {
+      "title": "Pokémon Red and Blue",
+      "developer": "Game Freak",
+      "release_year": 1996,
+      "platform": "Game Boy",
+      "significance": "Launched one of the most successful entertainment franchises of all time",
+      "download_link": "https://www.nintendo.com/en-gb/Games/Game-Boy/Pokemon-Red-Version-266109.html",
+      "image_url": "https://i0.wp.com/mynintendonews.com/wp-content/uploads/2016/02/pokemon_splatfest_red_vs_blue_splatoon.jpg?fit=1280%2C720&ssl=1"
+    }
+  ]
+}
