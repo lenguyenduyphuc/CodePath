@@ -1,0 +1,156 @@
+/* Card styles */
+.card-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.card-inner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s;
+  transform-style: preserve-3d;
+}
+
+.card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.card-front {
+  background-color: white;
+}
+
+.card-back {
+  background-color: white;
+  transform: rotateY(180deg);
+}
+
+/* Category-based styling */
+.card-easy {
+  background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+  border: 2px solid #80deea;
+}
+
+.card-medium {
+  background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+  border: 2px solid #a5d6a7;
+}
+
+.card-hard {
+  background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+  border: 2px solid #ffcc80;
+}
+
+.difficulty-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: white;
+}
+
+.card-easy .difficulty-badge {
+  background-color: #26c6da;
+}
+
+.card-medium .difficulty-badge {
+  background-color: #66bb6a;
+}
+
+.card-hard .difficulty-badge {
+  background-color: #ffa726;
+}
+
+.card-text {
+  font-size: 1.5rem;
+  color: #333;
+  text-align: center;
+  font-weight: 500;
+  margin: 0;
+  z-index: 2;
+}
+
+.card-back .card-text {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+/* Image styling */
+.card-image-container {
+  width: 400px;
+  max-height: 200px;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 8px;
+  position: relative;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  max-height: 400px;
+}
+
+/* Hover effect */
+.card-wrapper:hover .card-face {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  .card-text {
+    font-size: 1.25rem;
+  }
+
+  .card-back .card-text {
+    font-size: 1rem;
+  }
+
+  .card-image-container {
+    max-height: 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-face {
+    padding: 1.5rem;
+  }
+
+  .card-text {
+    font-size: 1.125rem;
+  }
+
+  .card-back .card-text {
+    font-size: 0.875rem;
+  }
+
+  .card-image-container {
+    max-height: 40%;
+  }
+}

@@ -1,0 +1,178 @@
+/* App container */
+.app-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  width: 100%;
+}
+
+/* Content wrapper */
+.content-wrapper {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Typography */
+.app-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.app-subtitle {
+  font-size: 1.125rem;
+  color: #a0a0a0;
+  margin-bottom: 1rem;
+  text-align: center;
+  max-width: 600px;
+}
+
+.card-counter {
+  font-size: 1rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Card container */
+.card-container {
+  position: relative;
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+  perspective: 2000px;
+}
+
+/* Navigation buttons */
+.navigation-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.nav-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  transition: all 0.2s ease;
+}
+
+.nav-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.nav-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
+
+/* Category filter */
+.difficulty-filter {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.difficulty-button {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.difficulty-button.active {
+  transform: scale(1.05);
+}
+
+.difficulty-button.all {
+  background-color: #9e9e9e;
+  color: white;
+}
+
+.difficulty-button.all.active {
+  background-color: #757575;
+}
+
+.difficulty-button.easy {
+  background-color: #26c6da;
+  color: white;
+}
+
+.difficulty-button.easy.active {
+  background-color: #00acc1;
+}
+
+.difficulty-button.medium {
+  background-color: #66bb6a;
+  color: white;
+}
+
+.difficulty-button.medium.active {
+  background-color: #43a047;
+}
+
+.difficulty-button.hard {
+  background-color: #ffa726;
+  color: white;
+}
+
+.category-button.hard.active {
+  background-color: #fb8c00;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  .app-title {
+    font-size: 2.5rem;
+  }
+
+  .app-subtitle {
+    font-size: 1rem;
+  }
+
+  .nav-button {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-title {
+    font-size: 2rem;
+  }
+
+  .app-container {
+    padding: 1rem;
+  }
+
+  .nav-button {
+    width: 40px;
+    height: 40px;
+  }
+}
