@@ -44,7 +44,8 @@ const App = () => {
       <div className="content-wrapper">
         <h1 className="app-title">The Ultimate LLM Quiz</h1>
         <p className="app-subtitle">
-          How well do you know Large Language Models? Test your knowledge here!
+          How well do you know Large Language Models :? Test your knowledge
+          here!
         </p>
 
         <div className="difficulty-filter">
