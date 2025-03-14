@@ -1,0 +1,92 @@
+[
+  {
+    "question": "What does LLM stand for?",
+    "answer": "Large Language Model",
+    "image": "https://media.expert.ai/expertai/uploads/2023/05/AdobeStock_595600270-1024x768-1.jpg",
+    "difficulty": "easy"
+  },
+  {
+    "question": "What is the difference between supervised and unsupervised learning in LLMs?",
+    "answer": "Supervised learning uses labeled data for training, while unsupervised learning identifies patterns without labeled data.",
+    "image": "https://images.prismic.io/encord/f1fa13a6-88a3-4c20-b620-46489fe00f45_What+is+Supervised+Learning+%7C+Encord.png?auto=compress,format",
+    "difficulty": "medium"
+  },
+  {
+    "question": "What is the 'attention mechanism' in transformer-based LLMs?",
+    "answer": "The attention mechanism allows the model to weigh the importance of different words in a sequence when making predictions, enabling it to capture long-range dependencies in text.",
+    "image": "https://media.geeksforgeeks.org/wp-content/uploads/20200603211336/attn.png",
+    "difficulty": "hard"
+  },
+  {
+    "question": "What is 'prompt engineering'?",
+    "answer": "The practice of designing and optimizing input prompts to get the best possible outputs from large language models.",
+    "image": "https://promptengineering.org/content/images/2023/09/What-is-Prompt-Engineering.png",
+    "difficulty": "medium"
+  },
+  {
+    "question": "What is 'tokenization' in the context of LLMs?",
+    "answer": "The process of breaking text into smaller units (tokens) that the model can process, such as words, subwords, or characters.",
+    "image": "https://images.ctfassets.net/lzny33ho1g45/xxBv48FmBSnpZTdMPtO1o/ae93a2be970fe66292889e9a7cfb041f/perplexity-app-tips-hero.jpg?w=1520&fm=jpg&q=31&fit=thumb&h=760",
+    "difficulty": "easy"
+  },
+  {
+    "question": "What is 'fine-tuning' in the context of LLMs?",
+    "answer": "The process of further training a pre-trained model on a specific dataset to adapt it for particular tasks or domains.",
+    "image": "https://cdn.prod.website-files.com/614c82ed388d53640613982e/66bb667edb61a05af03b265b_65b7a73f7ee95b6c9e261863_using-prompts-to-fine-tune-llms-with-instruction.webp",
+    "difficulty": "medium"
+  },
+  {
+    "question": "What is 'perplexity' in language models?",
+    "answer": "A measurement of how well a language model predicts a sample of text, with lower perplexity indicating better prediction performance.",
+    "image": "https://miro.medium.com/v2/resize:fit:1200/1*h4qCgiWk3CaWTQdWrjq0Bw.png",
+    "difficulty": "medium"
+  },
+  {
+    "question": "What is 'hallucination' in the context of LLMs?",
+    "answer": "When an LLM generates information that appears plausible but is factually incorrect or made up, not grounded in its training data.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLnR20EjCr3rxhLqQxdDGsVsP4bcOpZtxJaA&s",
+    "difficulty": "hard"
+  },
+  {
+    "question": "What is the difference between GPT-3 and GPT-4?",
+    "answer": "GPT-4 has more parameters, better reasoning capabilities, reduced hallucinations, and multimodal capabilities compared to GPT-3.",
+    "image": "https://i0.wp.com/easypromptguide.com/wp-content/uploads/2023/08/openais-gpt-4.jpg",
+    "difficulty": "hard"
+  },
+  {
+    "question": "What is 'zero-shot learning' in LLMs?",
+    "answer": "The ability of a model to perform tasks it wasn't explicitly trained on, without any examples of the task.",
+    "image": "https://images.prismic.io/encord/9916d1b4-0301-445a-9ddf-0ce7d49b7e58_Zero+Shot+learning.png?auto=compress%2Cformat&fit=max",
+    "difficulty": "easy"
+  },
+  {
+    "question": "What is 'RLHF' in the context of LLMs?",
+    "answer": "Reinforcement Learning from Human Feedback - a technique to align AI systems with human preferences by using human feedback to train reward models.",
+    "image": "https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/blog/rlhf/reward-model.png",
+    "difficulty": "easy"
+  },
+  {
+    "question": "What is 'embeddings' in the context of LLMs?",
+    "answer": "Vector representations of words, phrases, or documents that capture semantic meaning in a way that machines can process.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8y1kOqF-Cie6bHV7OwG7EqIAq1r0Kof-uiA&s",
+    "difficulty": "medium"
+  },
+  {
+    "question": "What is 'context window' in LLMs?",
+    "answer": "The maximum amount of text (tokens) that a model can process at once, which determines how much information it can consider when generating responses.",
+    "image": "https://cloudkitect.com/wp-content/uploads/2024/09/ContextWindowLimitation-1024x629.webp",
+    "difficulty": "medium"
+  },
+  {
+    "question": "What is 'parameter efficient fine-tuning' (PEFT)?",
+    "answer": "Techniques like LoRA, adapters, and prompt tuning that allow fine-tuning LLMs while updating only a small subset of parameters, saving computational resources.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBtTpC4nJbWibRIHjadDsjM0SALoicnPXEsA&s",
+    "difficulty": "hard"
+  },
+  {
+    "question": "What is 'few-shot learning' in LLMs?",
+    "answer": "The ability of a model to learn a new task from just a few examples provided in the prompt, without changing the model's weights.",
+    "image": "https://miro.medium.com/v2/resize:fit:1400/1*4DTL5q--UxuoMFc6P0b3dw.png",
+    "difficulty": "easy"
+  }
+]
