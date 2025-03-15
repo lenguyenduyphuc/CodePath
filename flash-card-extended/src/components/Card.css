@@ -1,17 +1,17 @@
-/* Card styles */
 .card-wrapper {
   position: relative;
   width: 100%;
   aspect-ratio: 3 / 2;
   cursor: pointer;
   margin: 0 auto;
+  perspective: 1000px;
 }
 
 .card-inner {
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 0.7s;
+  transition: transform 0.8s;
   transform-style: preserve-3d;
 }
 
@@ -36,11 +36,23 @@
 
 .card-front {
   background-color: white;
+  transform: rotateY(0deg);
 }
 
 .card-back {
   background-color: white;
   transform: rotateY(180deg);
+}
+
+/* Add a pulsing animation to encourage clicking */
+@keyframes pulse {
+  100% {
+    transform: scale(1);
+  }
+}
+
+.card-wrapper:not(:hover) .card-inner:not(.flipped) {
+  animation: pulse 2s infinite;
 }
 
 /* Category-based styling */

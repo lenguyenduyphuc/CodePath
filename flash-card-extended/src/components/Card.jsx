@@ -1,28 +1,22 @@
-import { useState } from "react";
+"use client";
+import GuessForm from "./Guess";
 import "./Card.css";
 
-const Card = ({ question, answer, isFlipped, onClick, image, difficulty }) => {
-  const [maxStreak, setMaxStreak] = useState(0);
-  const [streak, setStreak] = useState(0);
-  const [input, setInput] = useState("");
-
-  const handleCorrect = (e) => {
-    e.preventDefault();
-    if (answer.toLowerCase().includes(input.toLowerCase())) {
-      const newStreak = streak + 1;
-      setStreak(newStreak);
-      if (newStreak > maxStreak) setMaxStreak(newStreak);
-    } else {
-      setMaxStreak(Math.max(maxStreak, streak));
-      setStreak(0);
-    }
-    setInput("");
-  };
-
+const Card = ({
+  question,
+  answer,
+  flipped,
+  setFlipped,
+  onClick,
+  image,
+  difficulty,
+  index,
+  setIndex,
+}) => {
   return (
-    <div>
+    <div className="card-container">
       <div className="card-wrapper" onClick={onClick}>
-        <div className={`card-inner ${isFlipped ? "flipped" : ""}`}>
+        <div className={`card-inner ${flipped ? "flipped" : ""}`}>
           {/* Front */}
           <div className={`card-face card-front card-${difficulty}`}>
             <p className="card-text">{question}</p>
@@ -44,21 +38,13 @@ const Card = ({ question, answer, isFlipped, onClick, image, difficulty }) => {
           </div>
         </div>
       </div>
-      <div className="streak-info">
-        <p>
-          Current Streak: {streak}, Longest Streak: {maxStreak}
-        </p>
-      </div>
-      <p>Guess the answer here</p>
-      <form onSubmit={handleCorrect}>
-        <input
-          type="text"
-          placeholder="Place your answer here..."
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-        />
-        <button type="submit">Submit Guess</button>
-      </form>
+      <GuessForm
+        index={index}
+        setIndex={setIndex}
+        answer={answer}
+        onClick={onClick}
+        setFlipped={setFlipped}
+      />
     </div>
   );
 };
