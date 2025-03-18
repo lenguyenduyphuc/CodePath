@@ -24,7 +24,6 @@ const App = () => {
   const [isAnimating, setIsAnimating] = useState(false);
 
   console.log(filteredQuestions);
-  // Initialize questions
   useEffect(() => {
     setFilteredQuestions(questions);
     setActiveQuestions(questions);
