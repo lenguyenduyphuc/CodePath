@@ -29,7 +29,6 @@ const App = () => {
     setActiveQuestions(questions);
   }, []);
 
-  // Filter questions based on difficulty
   useEffect(() => {
     if (difficulty === "all") {
       setFilteredQuestions(showMastered ? masteredCards : activeQuestions);
