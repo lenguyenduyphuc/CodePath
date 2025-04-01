@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
+import BanList from "./Components/BanList";
+import History from "./Components/History";
 import "./App.css";
 
 const App = () => {
-  // State variables
   const CAT_API = import.meta.env.VITE_CAT_API_KEY;
 
   const [cat, setCat] = useState(null);
@@ -13,7 +14,6 @@ const App = () => {
   const [filteredCats, setFilteredCats] = useState([]);
   const [history, setHistory] = useState([]);
 
-  // Initial fetch of cat data
   useEffect(() => {
     fetchCats();
   }, []);
@@ -22,11 +22,8 @@ const App = () => {
     setLoading(true);
     const headers = new Headers({
       "Content-Type": "application/json",
+      "x-api-key": CAT_API,
     });
-
-    if (CAT_API) {
-      headers.append("x-api-key", CAT_API);
-    }
 
     const requestOptions = {
       method: "GET",
@@ -54,13 +51,11 @@ const App = () => {
           const breed = cat.breeds[0];
           return {
             id: cat.id,
-            name: breed.name || "Unknown",
-            origin: breed.origin || "Unknown",
-            weight: breed.weight?.metric || "Unknown",
-            lifeSpan: breed.life_span || "Unknown",
-            temperament: breed.temperament
-              ? breed.temperament.split(", ")[0]
-              : "Unknown",
+            name: breed.name,
+            origin: breed.origin,
+            weight: breed.weight?.metric,
+            lifeSpan: breed.life_span,
+            temperament: breed.temperament.split(", ")[0],
             imageUrl: cat.url,
           };
         });
@@ -88,7 +83,6 @@ const App = () => {
   useEffect(() => {
     if (allCats.length > 0) {
       const newFilteredCats = allCats.filter((catItem) => {
-        // Check if any attribute value of this cat is in the ban list
         return !banList.some((banned) => {
           const [attribute, value] = banned.split(":");
           return catItem[attribute] === value;
@@ -134,10 +128,8 @@ const App = () => {
     const banItem = `${attribute}:${value}`;
 
     if (banList.includes(banItem)) {
-      // Remove from ban list
       setBanList(banList.filter((item) => item !== banItem));
     } else {
-      // Add to ban list
       setBanList([...banList, banItem]);
     }
   };
@@ -149,7 +141,6 @@ const App = () => {
 
   // Handle fetch more cats when needed
   const handleDiscoverClick = () => {
-    // If we're running low on filtered cats, fetch more
     if (filteredCats.length < 5) {
       fetchCats();
     } else {
@@ -157,7 +148,6 @@ const App = () => {
     }
   };
 
-  // Clear history
   const clearHistory = () => {
     setHistory([]);
   };
@@ -214,11 +204,7 @@ const App = () => {
               </div>
 
               <div className="cat-image-container">
-                <img
-                  src={cat.imageUrl || "/placeholder.svg"}
-                  alt={cat.name}
-                  className="cat-image"
-                />
+                <img src={cat.imageUrl} alt={cat.name} className="cat-image" />
               </div>
             </div>
           ) : (
@@ -236,82 +222,13 @@ const App = () => {
           </button>
         </div>
 
-        <div className="sidebar">
-          <div className="ban-list-container">
-            <h2>Ban List</h2>
-            <p className="ban-instruction">
-              Select an attribute in your listing to ban it
-            </p>
-
-            {banList.length === 0 ? (
-              <p className="no-bans">No attributes banned yet</p>
-            ) : (
-              <div className="ban-items">
-                {banList.map((item) => {
-                  const [attribute, value] = item.split(":");
-                  return (
-                    <div
-                      key={item}
-                      className="ban-item"
-                      onClick={() => handleAttributeClick(attribute, value)}
-                    >
-                      <span className="attribute-name">{attribute}: </span>
-                      <span className="attribute-value">{value}</span>
-                    </div>
-                  );
-                })}
-              </div>
-            )}
-
-            <div className="stats">
-              <p>
-                Available cats: {filteredCats.length} of {allCats.length}
-              </p>
-            </div>
-          </div>
-
-          <div className="history-container">
-            <div className="history-header">
-              <h2>History</h2>
-              {history.length > 0 && (
-                <button className="clear-history-btn" onClick={clearHistory}>
-                  Clear
-                </button>
-              )}
-            </div>
-            <p className="history-instruction">
-              Your previously discovered cats
-            </p>
-
-            {history.length === 0 ? (
-              <p className="no-history">No history yet</p>
-            ) : (
-              <div className="history-items">
-                {history.map((historyCat) => (
-                  <div
-                    key={`${historyCat.id}-${Math.random()}`}
-                    className="history-item"
-                  >
-                    <div className="history-image-container">
-                      <img
-                        src={historyCat.imageUrl}
-                        alt={historyCat.name}
-                        className="history-image"
-                      />
-                    </div>
-                    <div className="history-details">
-                      <h3>{historyCat.name}</h3>
-                      <div className="history-attributes">
-                        <span>{historyCat.origin}</span>
-                        <span>{historyCat.weight} kg</span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        </div>
+        <BanList
+          banList={banList}
+          handleAttributeClick={handleAttributeClick}
+          filteredCats={filteredCats}
+          allCats={allCats}
+        />
+        <History clearHistory={clearHistory} history={history} />
       </div>
     </div>
   );
