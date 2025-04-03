@@ -4,7 +4,7 @@ import LandingPage from "./pages/LandingPage";
 import DashBoard from "./pages/DashBoard";
 import BreweryDetails from "./components/BreweryDetails";
 import SearchPage from "./pages/SearchPage";
-import Favorites from "./pages/Favorites";
+import FavoritesPage from "./pages/FavoritesPage";
 import "./App.css";
 
 const App = () => {
@@ -19,7 +19,7 @@ const App = () => {
               <Route path="/" element={<LandingPage />} />
               <Route path="/dashboard" element={<DashBoard />} />
               <Route path="/breweries/:id" element={<BreweryDetails />} />
-              <Route path="/favorites" element={<Favorites />} />
+              <Route path="/favorites" element={<FavoritesPage />} />
               <Route path="/search" element={<SearchPage />} />
             </Routes>
           </main>

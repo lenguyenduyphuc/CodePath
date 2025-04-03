@@ -29,7 +29,6 @@ const Favorites = () => {
   const [uniqueStates, setUniqueStates] = useState([]);
   const [animateCards, setAnimateCards] = useState(false);
 
-  // Load favorites from localStorage
   useEffect(() => {
     const savedFavorites = localStorage.getItem("favorites");
     if (savedFavorites) {
@@ -37,7 +36,6 @@ const Favorites = () => {
       setFavorites(parsedFavorites);
       setFilteredFavorites(parsedFavorites);
 
-      // Extract unique brewery types and states for filters
       const types = [
         ...new Set(
           parsedFavorites.map((brewery) => brewery.brewery_type).filter(Boolean)
@@ -53,17 +51,14 @@ const Favorites = () => {
       setUniqueStates(states.sort());
     }
 
-    // Trigger animation after data is loaded
     setTimeout(() => {
       setAnimateCards(true);
     }, 100);
   }, []);
 
-  // Apply filters and sorting
   useEffect(() => {
     let result = [...favorites];
 
-    // Apply search filter
     if (searchQuery) {
       const query = searchQuery.toLowerCase();
       result = result.filter(
@@ -74,17 +69,14 @@ const Favorites = () => {
       );
     }
 
-    // Apply type filter
     if (filterType) {
       result = result.filter((brewery) => brewery.brewery_type === filterType);
     }
 
-    // Apply state filter
     if (filterState) {
       result = result.filter((brewery) => brewery.state === filterState);
     }
 
-    // Apply sorting
     const [sortField, sortDirection] = sortBy.split(":");
     result.sort((a, b) => {
       const valueA = (a[sortField] || "").toLowerCase();
@@ -98,15 +90,12 @@ const Favorites = () => {
     });
 
     setFilteredFavorites(result);
-
-    // Reset animation state when filters change
     setAnimateCards(false);
     setTimeout(() => {
       setAnimateCards(true);
     }, 100);
   }, [favorites, searchQuery, sortBy, filterType, filterState]);
 
-  // Remove a brewery from favorites
   const removeFavorite = (breweryId) => {
     const updatedFavorites = favorites.filter(
       (brewery) => brewery.id !== breweryId
@@ -115,7 +104,6 @@ const Favorites = () => {
     localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
   };
 
-  // Clear all favorites
   const clearAllFavorites = () => {
     if (window.confirm("Are you sure you want to remove all favorites?")) {
       setFavorites([]);
@@ -123,7 +111,6 @@ const Favorites = () => {
     }
   };
 
-  // Reset all filters
   const resetFilters = () => {
     setSearchQuery("");
     setFilterType("");
@@ -131,13 +118,10 @@ const Favorites = () => {
     setSortBy("name:asc");
   };
 
-  // Format phone number
   const formatPhone = (phone) => {
     if (!phone) return "";
-    // Clean the phone string to contain only digits
     const cleaned = phone.replace(/\D/g, "");
 
-    // Format based on length
     if (cleaned.length === 10) {
       return `(${cleaned.substring(0, 3)}) ${cleaned.substring(
         3,
@@ -147,7 +131,6 @@ const Favorites = () => {
     return phone;
   };
 
-  // Capitalize brewery type
   const capitalizeBreweryType = (type) => {
     if (!type) return "";
     return type

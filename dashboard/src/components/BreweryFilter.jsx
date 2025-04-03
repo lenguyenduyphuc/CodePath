@@ -108,12 +108,12 @@ const BreweryFilter = ({ onFilterChange }) => {
   useEffect(() => {
     // Update the filtersRef with current values
     filtersRef.current = {
-      query: debouncedSearchQuery || undefined,
-      by_city: city || undefined,
-      by_state: state || undefined,
-      by_country: country || undefined,
-      by_postal: postalCode || undefined,
-      by_type: breweryType || undefined,
+      query: debouncedSearchQuery,
+      by_city: city,
+      by_state: state,
+      by_country: country,
+      by_postal: postalCode,
+      by_type: breweryType,
       sort: sortBy,
       page,
       per_page: perPage,

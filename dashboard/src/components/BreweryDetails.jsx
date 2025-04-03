@@ -29,14 +29,9 @@ const BreweryDetails = () => {
           `https://api.openbrewerydb.org/v1/breweries/${id}`
         );
 
-        if (!response.ok) {
-          throw new Error(`API returned status: ${response.status}`);
-        }
-
         const data = await response.json();
         setBrewery(data);
 
-        // Check if brewery is in favorites
         const savedFavorites = localStorage.getItem("favorites");
         if (savedFavorites) {
           const favorites = JSON.parse(savedFavorites);
@@ -55,13 +50,10 @@ const BreweryDetails = () => {
     fetchBrewery();
   }, [id]);
 
-  // Format phone number
   const formatPhone = (phone) => {
     if (!phone) return "";
-    // Clean the phone string to contain only digits
     const cleaned = phone.replace(/\D/g, "");
 
-    // Format based on length
     if (cleaned.length === 10) {
       return `(${cleaned.substring(0, 3)}) ${cleaned.substring(
         3,
@@ -71,7 +63,6 @@ const BreweryDetails = () => {
     return phone;
   };
 
-  // Toggle favorite
   const toggleFavorite = () => {
     if (!brewery) return;
 
@@ -88,7 +79,6 @@ const BreweryDetails = () => {
     setIsFavorite(!isFavorite);
   };
 
-  // Share brewery
   const shareBrewery = () => {
     if (navigator.share && brewery) {
       navigator
@@ -101,7 +91,6 @@ const BreweryDetails = () => {
           console.error("Error sharing:", err);
         });
     } else {
-      // Fallback for browsers that don't support navigator.share
       navigator.clipboard
         .writeText(window.location.href)
         .then(() => alert("Link copied to clipboard!"))
@@ -109,7 +98,6 @@ const BreweryDetails = () => {
     }
   };
 
-  // Capitalize brewery type
   const capitalizeBreweryType = (type) => {
     if (!type) return "";
     return type
@@ -118,7 +106,6 @@ const BreweryDetails = () => {
       .join(" ");
   };
 
-  // Load map when brewery data is available
   useEffect(() => {
     if (brewery && brewery.latitude && brewery.longitude) {
       const loadMap = () => {
@@ -126,9 +113,6 @@ const BreweryDetails = () => {
         setMapLoaded(true);
         return mapUrl;
       };
-
-      // In a real app, you would use a proper map API key
-      // For this example, we'll use a placeholder
       loadMap();
     }
   }, [brewery]);

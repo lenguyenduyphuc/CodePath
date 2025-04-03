@@ -93,8 +93,7 @@ const NavBar = () => {
           </button>
         </div>
       </nav>
-
-      {/* Mobile menu */}
+      Mobile menu
       <div className={`mobile-menu ${isMobileMenuOpen ? "open" : ""}`}>
         <div className="mobile-menu-content">
           <NavItem

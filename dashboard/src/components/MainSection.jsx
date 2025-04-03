@@ -14,7 +14,6 @@ const MainSection = () => {
   const [animateCards, setAnimateCards] = useState(false);
 
   useEffect(() => {
-    // Load favorites from localStorage
     const savedFavorites = localStorage.getItem("favorites");
     if (savedFavorites) {
       setFavorites(JSON.parse(savedFavorites));
@@ -25,10 +24,8 @@ const MainSection = () => {
     const fetchBreweries = async () => {
       setLoading(true);
       try {
-        // Build URL with filter parameters
         const url = new URL("https://api.openbrewerydb.org/v1/breweries");
 
-        // Add all filters to URL parameters
         Object.entries(filters).forEach(([key, value]) => {
           if (value) {
             url.searchParams.append(key, value);
@@ -37,15 +34,10 @@ const MainSection = () => {
 
         const response = await fetch(url);
 
-        if (!response.ok) {
-          throw new Error(`API returned status: ${response.status}`);
-        }
-
         const data = await response.json();
         setBreweries(data);
         setError(null);
 
-        // Trigger animation after data is loaded
         setTimeout(() => {
           setAnimateCards(true);
         }, 100);
@@ -56,25 +48,17 @@ const MainSection = () => {
         setLoading(false);
       }
     };
-
     fetchBreweries();
-
-    // Reset animation state when filters change
     setAnimateCards(false);
   }, [filters]);
 
-  // Handle filter changes
   const handleFilterChange = (newFilters) => {
     setFilters(newFilters);
   };
 
-  // Format phone number
   const formatPhone = (phone) => {
     if (!phone) return "";
-    // Clean the phone string to contain only digits
     const cleaned = phone.replace(/\D/g, "");
-
-    // Format based on length
     if (cleaned.length === 10) {
       return `(${cleaned.substring(0, 3)}) ${cleaned.substring(
         3,
@@ -84,7 +68,6 @@ const MainSection = () => {
     return phone;
   };
 
-  // Toggle favorite
   const toggleFavorite = (brewery) => {
     const newFavorites = [...favorites];
     const index = newFavorites.findIndex((fav) => fav.id === brewery.id);
@@ -99,7 +82,6 @@ const MainSection = () => {
     localStorage.setItem("favorites", JSON.stringify(newFavorites));
   };
 
-  // Check if brewery is favorited
   const isFavorite = (breweryId) => {
     return favorites.some((fav) => fav.id === breweryId);
   };
