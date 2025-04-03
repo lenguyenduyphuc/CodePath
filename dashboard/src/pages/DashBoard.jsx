@@ -21,24 +21,9 @@ const DashBoard = () => {
       .then((response) => response.json())
       .then((data) => {
         setStats({
-          total: data.total || 8500,
-          byType: data.by_type || {
-            micro: 4500,
-            brewpub: 1800,
-            regional: 950,
-            planning: 650,
-            contract: 350,
-            proprietor: 250,
-          },
-          byState: data.by_state || {
-            California: 950,
-            Colorado: 425,
-            Michigan: 380,
-            "New York": 460,
-            Oregon: 310,
-            Texas: 380,
-            Washington: 420,
-          },
+          total: data.total,
+          byType: data.by_type,
+          byState: data.by_state,
         });
       })
       .catch((error) => {

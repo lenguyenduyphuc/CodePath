@@ -299,15 +299,6 @@ const BreweryFilter = ({ onFilterChange }) => {
             onChange={(e) => setSearchQuery(e.target.value)}
             aria-label="Search breweries by name"
           />
-          {searchQuery && (
-            <button
-              className="clear-search"
-              onClick={() => setSearchQuery("")}
-              aria-label="Clear search"
-            >
-              <X className="clear-icon" />
-            </button>
-          )}
         </div>
       </div>
 
@@ -347,15 +338,6 @@ const BreweryFilter = ({ onFilterChange }) => {
               </select>
               <ChevronDown className="select-icon" />
             </div>
-            {city && (
-              <button
-                className="clear-filter"
-                onClick={() => setCity("")}
-                aria-label="Clear city filter"
-              >
-                <X className="clear-filter-icon" />
-              </button>
-            )}
           </div>
 
           {/* State filter */}
@@ -381,15 +363,6 @@ const BreweryFilter = ({ onFilterChange }) => {
               </select>
               <ChevronDown className="select-icon" />
             </div>
-            {state && (
-              <button
-                className="clear-filter"
-                onClick={() => setState("")}
-                aria-label="Clear state filter"
-              >
-                <X className="clear-filter-icon" />
-              </button>
-            )}
           </div>
 
           {/* Country filter */}
@@ -415,15 +388,6 @@ const BreweryFilter = ({ onFilterChange }) => {
               </select>
               <ChevronDown className="select-icon" />
             </div>
-            {country && (
-              <button
-                className="clear-filter"
-                onClick={() => setCountry("")}
-                aria-label="Clear country filter"
-              >
-                <X className="clear-filter-icon" />
-              </button>
-            )}
           </div>
 
           {/* Postal code filter */}
@@ -440,15 +404,6 @@ const BreweryFilter = ({ onFilterChange }) => {
               value={postalCode}
               onChange={(e) => setPostalCode(e.target.value)}
             />
-            {postalCode && (
-              <button
-                className="clear-filter"
-                onClick={() => setPostalCode("")}
-                aria-label="Clear postal code filter"
-              >
-                <X className="clear-filter-icon" />
-              </button>
-            )}
           </div>
 
           {/* Brewery type filter */}
@@ -474,15 +429,6 @@ const BreweryFilter = ({ onFilterChange }) => {
               </select>
               <ChevronDown className="select-icon" />
             </div>
-            {breweryType && (
-              <button
-                className="clear-filter"
-                onClick={() => setBreweryType("")}
-                aria-label="Clear brewery type filter"
-              >
-                <X className="clear-filter-icon" />
-              </button>
-            )}
           </div>
 
           {/* Sort by filter */}

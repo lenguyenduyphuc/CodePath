@@ -1,8 +1,5 @@
-"use client";
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { SearchIcon } from "lucide-react";
 
 const Search = () => {
   const [query, setQuery] = useState("");
@@ -26,7 +23,6 @@ const Search = () => {
           className="search-input-hero"
         />
         <button type="submit" className="search-button">
-          <SearchIcon className="search-icon" />
           <span>Search</span>
         </button>
       </div>
