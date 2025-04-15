@@ -8,6 +8,7 @@ import FavoritesPage from "./pages/FavoritesPage";
 import "./App.css";
 
 const App = () => {
+  // Maybe add more later
   return (
     <Router>
       <div className="app-container">
