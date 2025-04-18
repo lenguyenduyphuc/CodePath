@@ -1,0 +1,132 @@
+/* 1. Layout wrapper ---------------------------------------------------- */
+.whole-page-CF {
+    min-height: 100vh;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    background: linear-gradient(135deg, #fff7e8 0%, #ffe0f7 100%);
+    font-family: "Poppins", sans-serif;
+}
+
+/* 2. Title ------------------------------------------------------------- */
+.create-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(90deg, #ff7b00, #ff20b7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
+/* 3. Hero image -------------------------------------------------------- */
+.create-fruit-image {
+    width: clamp(200px, 40vw, 400px);
+    height: auto;
+    object-fit: cover;
+    border-radius: 1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 300ms ease;
+}
+
+.create-fruit-image:hover {
+    transform: scale(1.05);
+}
+
+/* 4. Form container ---------------------------------------------------- */
+.form-container {
+    width: min(90%, 600px);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* 5. Input groups ------------------------------------------------------ */
+.mini-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.mini-container h3 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+/* 6. Text & number inputs / textarea ---------------------------------- */
+input[type="text"],
+input[type="number"],
+textarea {
+    padding: 0.75rem 1rem;
+    border: 2px solid #ff7b00;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 250ms ease;
+    resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #ff20b7;
+}
+
+/* 7. Radio group ------------------------------------------------------- */
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 0.5rem 0.75rem;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-weight: 500;
+}
+
+/* 8. Submit button ----------------------------------------------------- */
+button[type="submit"] {
+    align-self: center;
+    margin-top: 2rem;
+    padding: 0.9rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    background: linear-gradient(90deg, #ff7b00, #ff20b7);
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+button[type="submit"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* 9. Dark‑mode palette ------------------------------------------------- */
+@media (prefers-color-scheme: dark) {
+    .whole-page-CF {
+        background: linear-gradient(135deg, #261a17 0%, #1a0021 100%);
+        color: #f3f3f3;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    textarea {
+        background-color: #271e1b;
+        border-color: #ff7b00;
+        color: #f3f3f3;
+    }
+
+    ul li {
+        color: #f3f3f3;
+    }
+}
