@@ -17,7 +17,7 @@ const NavBar = () => (
       </li>
 
       <li>
-        <NavLink to="/gallery" className="sidebar__link">
+        <NavLink to="/inventory" className="sidebar__link">
           Your inventory
         </NavLink>
       </li>

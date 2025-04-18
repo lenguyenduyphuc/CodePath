@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { supabase } from "./client";
 import { Routes, Route } from "react-router-dom";
+import CreateFruit from "./pages/CreateFruit";
 import HomePage from "./pages/HomePage";
 import NavBar from "./components/NavBar";
-import CreateFruit from "./components/CreateFruit";
+import ReadFruits from "./pages/ReadFruits";
+
 const App = () => {
   const [fruitData, setFruitData] = useState([]);
 
@@ -27,6 +29,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/create" element={<CreateFruit />} />
+          <Route path="/inventory" element={<ReadFruits />} />
         </Routes>
       </main>
     </div>
