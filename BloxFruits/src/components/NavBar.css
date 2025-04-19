@@ -44,7 +44,6 @@
     transition: color 0.25s ease;
 }
 
-/* Hover + active states */
 .sidebar__link:hover {
     color: var(--link-hover);
 }
@@ -54,7 +53,6 @@
     text-decoration: underline;
 }
 
-/* Logo at the bottom */
 .sidebar__logo {
     display: flex;
     justify-content: center;
@@ -66,7 +64,6 @@
     height: auto;
 }
 
-/* Small‑screen treatment: collapses into a top bar */
 @media (max-width: 640px) {
     .sidebar {
         flex-direction: row;
@@ -85,6 +82,5 @@
 
     .sidebar__logo {
         display: none;
-        /* hide logo on very narrow screens */
     }
 }
