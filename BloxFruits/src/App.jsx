@@ -5,6 +5,7 @@ import CreateFruit from "./pages/CreateFruit";
 import HomePage from "./pages/HomePage";
 import NavBar from "./components/NavBar";
 import ReadFruits from "./pages/ReadFruits";
+import FruitDetails from "./pages/FruitDetails";
 
 const App = () => {
   const [fruitData, setFruitData] = useState([]);
@@ -31,6 +32,7 @@ const App = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/create" element={<CreateFruit />} />
           <Route path="/inventory" element={<ReadFruits />} />
+          <Route path="/details/:id" element={<FruitDetails />} />
         </Routes>
       </main>
     </div>
