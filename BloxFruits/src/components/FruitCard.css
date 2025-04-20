@@ -125,7 +125,7 @@
 
 .view-button {
     display: inline-block;
-    background: var(--type-color, var(--accent-color));
+    background: greenyellow;
     color: #000;
     font-weight: 600;
     font-size: 0.9rem;
@@ -140,6 +140,28 @@
 }
 
 .view-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    background: #ffffff;
+}
+
+.edit-button {
+    display: inline-block;
+    background: orange;
+    color: #000;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.edit-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
     background: #ffffff;

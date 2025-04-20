@@ -55,6 +55,9 @@ const FruitCard = ({ fruit }) => {
         <Link to={`/details/${fruit.id}`} className="view-button">
           View Details
         </Link>
+        <Link to={`/edit/${fruit.id}`} className="edit-button">
+          Edit Fruit
+        </Link>
       </div>
     </div>
   );
