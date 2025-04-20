@@ -23,6 +23,7 @@ const App = () => {
   }, []);
 
   return (
+    // Update later
     <div className="app">
       <NavBar />
       <main className="main-content">
