@@ -100,7 +100,7 @@ const CreateFruit = () => {
         {/* cost */}
         <div className="mini-container">
           <label>
-            <h3>Cost (₲):</h3>
+            <h3>Cost(₲):</h3>
           </label>
           <input
             type="number"
@@ -135,7 +135,7 @@ const CreateFruit = () => {
         </div>
 
         <button type="submit" onClick={createFruit}>
-          Create Fruit
+          Create Fruit
         </button>
       </form>
     </div>

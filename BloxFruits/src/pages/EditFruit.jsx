@@ -68,6 +68,9 @@ export default function EditFruit() {
     }
   };
 
+  const handleTypeChange = (e) => {
+    setFruitData((prev) => ({ ...prev, type: e.target.value }));
+  };
   const handleDelete = async (e) => {
     e.preventDefault();
 
@@ -150,19 +153,25 @@ export default function EditFruit() {
               />
             </div>
 
-            <div className="form-group">
-              <label htmlFor="type">
-                <span className="label-text">Type</span>
+            <div className="mini-container">
+              <label>
+                <h3>Type:</h3>
               </label>
-              <input
-                id="type"
-                name="type"
-                type="text"
-                value={fruitData.type}
-                onChange={handleChange}
-                required
-                placeholder="Fruit type"
-              />
+              <ul>
+                {["Elemental", "Beast", "Natural"].map((t) => (
+                  <li key={t}>
+                    <input
+                      id={t}
+                      name="type"
+                      type="radio"
+                      value={t}
+                      onChange={handleTypeChange}
+                      checked={fruitData.type === t}
+                    />
+                    {t}
+                  </li>
+                ))}
+              </ul>
             </div>
 
             <div className="form-group full-width">
