@@ -1,42 +1,211 @@
-#root {
-  max-width: 1280px;
+/* Global styles and CSS variables */
+:root {
+  --primary-color: #4361ee;
+  --primary-light: #4895ef;
+  --secondary-color: #3f37c9;
+  --accent-color: #f72585;
+  --text-dark: #333333;
+  --text-light: #6c757d;
+  --background-light: #f8f9fa;
+  --background-white: #ffffff;
+  --border-color: #e0e0e0;
+  --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --transition-default: all 0.3s ease;
+}
+
+/* Dark theme variables */
+[data-theme="dark"] {
+  --primary-color: #4361ee;
+  --primary-light: #4895ef;
+  --secondary-color: #3f37c9;
+  --accent-color: #f72585;
+  --text-dark: #e0e0e0;
+  --text-light: #a0a0a0;
+  --background-light: #2a2a2a;
+  --background-white: #1a1a1a;
+  --border-color: #444444;
+  --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+  background-color: var(--background-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* App layout */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 0 20px;
+}
+
+/* Header */
+.app-header {
+  background: linear-gradient(to right, var(--primary-color), var(--primary-light));
+  color: white;
+  padding: 16px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 0.5px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Search */
+.search-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.search-input {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  width: 250px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  transition: var(--transition-default);
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.search-input:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+}
+
+.search-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  margin-left: 10px;
+  padding: 8px;
+  border-radius: 50%;
+  display: none;
+  transition: var(--transition-default);
+}
+
+.search-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Main content */
+.app-main {
+  flex-grow: 1;
+  padding: 30px 0;
+}
+
+/* Footer */
+.app-footer {
+  background-color: var(--background-white);
+  padding: 20px 0;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-light);
+  margin-top: auto;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .header-content {
+    position: relative;
   }
-  to {
-    transform: rotate(360deg);
+
+  .search-container {
+    position: absolute;
+    right: 0;
+    top: 0;
   }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .search-input {
+    width: 0;
+    padding: 10px 0;
+    opacity: 0;
+    pointer-events: none;
   }
-}
 
-.card {
-  padding: 2em;
-}
+  .search-container.active .search-input {
+    width: 200px;
+    padding: 10px 16px;
+    opacity: 1;
+    pointer-events: all;
+  }
 
-.read-the-docs {
-  color: #888;
+  .search-toggle {
+    display: block;
+    z-index: 2;
+  }
+
+  .app-main {
+    padding: 20px 0;
+  }
 }
